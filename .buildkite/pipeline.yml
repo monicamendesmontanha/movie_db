@@ -1,0 +1,5 @@
+- name: "Docker Test %n"
+  command: npm run docker-test
+  plugins:
+    - docker-compose#v2.1.0:
+        run: app

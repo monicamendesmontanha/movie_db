@@ -6,7 +6,9 @@
   "scripts": {
     "test": "NODE_ENV=TEST jest",
     "start": "NODE_ENV=PRODUCTION node ./app.js",
-    "test-docker": "npm install && npm test"
+    "docker-test": "npm install && npm test",
+    "docker-build": "docker build -t movies .",
+    "docker-run": "docker run movies npm run docker-test"
   },
   "author": "Coding Dojo Team",
   "license": "ISC",

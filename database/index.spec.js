@@ -3,10 +3,12 @@ const mongoose = require('mongoose');
 
 describe('Database', () => {
 	beforeAll((done) => {
-		mongoose.connection.collections['movies'].drop(function(err) {
+		mongoose.connection.collections['movies'].drop(function() {
 			done();
 		})
 	});
+
+
 
 	it('Saves a movie', async () => {
 		const movie = {
