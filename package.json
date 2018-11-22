@@ -4,8 +4,9 @@
   "description": "a kata to learn about building an Node API from scratch",
   "main": "index.js",
   "scripts": {
-    "test": "ENVIRONMENT='TEST' npm install && jest",
-    "start": "ENVIRONMENT='PRODUCTION' node ./app.js"
+    "test": "NODE_ENV=TEST jest",
+    "start": "NODE_ENV=PRODUCTION node ./app.js",
+    "test-docker": "npm install && npm test"
   },
   "author": "Coding Dojo Team",
   "license": "ISC",

@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-const environment = process.env.ENVIRONMENT || 'PRODUCTION';
+const environment = process.env.NODE_ENV || 'PRODUCTION';
 let db = `node-api-${environment}`;
 
 mongoose.connect(`mongodb://localhost/${db}`, { useNewUrlParser: true });
@@ -16,4 +16,5 @@ const database = {
 	getAll: async () => {
 		return await movieDatabaseSchema.find() }
 };
+
 module.exports = database;

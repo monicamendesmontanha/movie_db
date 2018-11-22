@@ -4,18 +4,10 @@ const mongoose = require('mongoose');
 
 describe('web', () => {
 	beforeAll((done) => {
-		mongoose.connection.on('connected', async () => {
-			try {
-				await mongoose.connection.collections['movies'].drop()
-				done();
-			}
-			catch(err) {
-				console.log(err)
-				done();
-			}
+		mongoose.connection.collections['movies'].drop(function(err) {
+			done();
 		})
-	}
-);
+	});
 
 	it('Saves a valid movie', async () => {
 		const response = await request(app)
