@@ -3,12 +3,9 @@ const mongoose = require('mongoose');
 
 describe('Database', () => {
 	beforeAll((done) => {
-		mongoose.connection.collections['movies'].drop(function() {
-			done();
-		})
+		mongoose.connection.collections['movies'].drop(() => done());
 	});
-
-
+	afterAll((done) => mongoose.connection.close(() => done()));
 
 	it('Saves a movie', async () => {
 		const movie = {
